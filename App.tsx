@@ -4,7 +4,7 @@ import { GridBlock } from './components/GridBlock';
 import { SidePanel } from './components/SidePanel';
 import { StorageModal } from './components/StorageModal';
 import { generateMandalartIdeas } from './services/geminiService';
-import { SparklesIcon, PenLine, FolderOpen } from 'lucide-react';
+import { Sparkles, PenLine, FolderOpen } from 'lucide-react';
 
 // Initialize 9 grids, each with 9 empty strings
 const INITIAL_MANDALART: MandalartData = Array(9).fill(null).map(() => Array(9).fill(""));
@@ -183,7 +183,7 @@ export default function App() {
                 <span>생성 중...</span>
             ) : (
                 <>
-                    <SparklesIcon size={16} />
+                    <Sparkles size={16} />
                     <span>AI 아이디어 생성</span>
                 </>
             )}

@@ -1,6 +1,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
-const apiKey = process.env.API_KEY || '';
+// Safely access process.env to prevent ReferenceError in pure browser environments
+const apiKey = (typeof process !== "undefined" && process.env) ? process.env.API_KEY : '';
 const ai = new GoogleGenAI({ apiKey });
 
 export const generateMandalartIdeas = async (mainGoal: string): Promise<{ subGoals: string[], detailMap: Record<number, string[]> } | null> => {
